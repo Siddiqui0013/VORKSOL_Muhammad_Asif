@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, FlatList, TouchableOpacity, Image, StyleSheet } from 'react-native';
-import contacts from "./contacts"
+import contacts from "./assets/contacts"
 
 
 export default function ContactListScreen( {navigation}: any ) {
@@ -12,7 +12,7 @@ export default function ContactListScreen( {navigation}: any ) {
         renderItem={({ item }) => (
           <TouchableOpacity 
             style={styles.contactItem} 
-            onPress={() => navigation.navigate('ContactDetails', { contact: item })}
+            onPress={() => navigation.navigate('Contact Details', { contact: item })}
           >
             {/* <Image source={{ uri: item.image }} style={styles.contactImage} /> */}
             <Image source={{ uri: "https://png.pngtree.com/png-clipart/20210915/ourmid/pngtree-user-avatar-placeholder-png-image_3918418.jpg" }} style={styles.contactImage} />
