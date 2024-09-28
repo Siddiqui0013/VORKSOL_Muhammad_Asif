@@ -23,6 +23,7 @@ const App = () => {
          />
         <Stack.Screen name="Figma Design"
          component={FigmaDesign}
+         options={{ headerShown: false }} 
          />
       </Stack.Navigator>
     </NavigationContainer>

@@ -1,24 +1,26 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, Button, StyleSheet, TouchableOpacity } from 'react-native';
 
 export default function HomeScreen({ navigation }: any) {
   return (
     <View style={styles.container}>
 
-<View style={styles.button}>
-        <Button
-          title="Go to Contact List"
-          onPress={() => navigation.navigate('Contact List')}
-        />
-      </View>
-      <View style={styles.button}>
-        <Button
-          title="Go to Figma Design Screen"
-          onPress={() => navigation.navigate('Figma Design')}
-        />
+<TouchableOpacity
+        style={styles.customButton}
+        onPress={() => navigation.navigate('Contact List')}
+      >
+        <Text style={styles.buttonText}>Go to Contact list</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        style={styles.customButton}
+        onPress={() => navigation.navigate('Figma Design')}
+      >
+        <Text style={styles.buttonText}>Go to Figma Design</Text>
+      </TouchableOpacity>
+
       </View>
 
-    </View>
   );
 }
 
@@ -35,5 +37,19 @@ const styles = StyleSheet.create({
   button: {
     width:"70%",
     marginTop:30,
+  },
+  customButton: {
+    backgroundColor: 'purple', 
+    paddingVertical: 15,
+    width:"70%",
+    alignItems:"center",
+    paddingHorizontal: 20,
+    borderRadius: 10,
+    marginVertical: 10,
+  },
+  buttonText: {
+    color: '#FFF',
+    fontSize: 18,
+    fontWeight: 'bold',
   },
 });
